@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
 });
 
 
-const clientsRoutes = require('./routes/ClientsRoute');
+const clientsRoutes = require('./Routes/ClientsRoute');
 
 
 //Criação de rotas estáticas
