@@ -1,4 +1,4 @@
-var access_token = "664d8e9dfd5ec024241ab5ba8a5a40227ac6a113";
+var access_token = "99e672583e948de3b3179a07cee1d492da40e10b";
 var link = `https://api.moloni.pt/v1/customers/getAll/?access_token=${access_token}`;
 const request = require('request');
 
