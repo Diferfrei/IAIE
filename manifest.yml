@@ -1,7 +1,0 @@
-applications:
-  - name: appIAIE
-    random-route: true
-    path: app
-    buidpack: https://github.com/cloudfoundry/nodejs-buidpack
-    host: appIAIE
-    memory: 128M
