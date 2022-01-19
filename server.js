@@ -24,8 +24,8 @@ app.use('./views', express.static ('views'));
 const audits = require('./Routes/ClientsRoute');
 
 app.use('/', clientsRoutes);
-//app.use('/addClient', clientsRoutes);
-
+app.use('/addClient', clientsRoutes);
+app.use('/deleteClient');
 
 // Server connection
 app.listen(port, (err) => {
