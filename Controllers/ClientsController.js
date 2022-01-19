@@ -74,8 +74,8 @@ function addClient(req, res) {
             return res.status(500).end();
         }
         else {
-            const success = "Successfully inserted";
-            res.json(success);
+            data = JSON.parse(body);
+            res.json(data);
         } 
     });
 }
