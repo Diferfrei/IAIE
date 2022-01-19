@@ -1,7 +1,7 @@
 var access_token = "1a2face158275ab8ba48eaf6df430d8ea0a0606f";
 var link = `https://api.moloni.pt/v1/customers/getAll/?access_token=${access_token}`;
 const request = require('request');
-const sanitizeHtml = require('sanitize-html');
+//const sanitizeHtml = require('sanitize-html');
  
 function getAll(req, res) {
     request.post({
@@ -22,7 +22,7 @@ function getAll(req, res) {
 }
 
 function insertCli(req, res) {
-    const vat = req.sanitize('vat').escape();
+    const vat = req.vat;
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=1a2face158275ab8ba48eaf6df430d8ea0a0606f`
     request.post({
         url: link,
