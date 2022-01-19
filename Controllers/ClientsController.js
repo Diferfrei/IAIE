@@ -60,8 +60,8 @@ function insertCli(req, res) {
             credit_limit: '0', //float OPTIONAL
             
             copies:{
-                document_set_id: req.sanitize('document_set_id').escape(), //0
-                copies: req.sanitize('copies').escape(), //0
+                document_set_id: '0', //0
+                copies: '0', //0
             },
             
             payment_method_id: '1454269', //int 1454269 para transf banc ou 0
