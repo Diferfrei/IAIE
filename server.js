@@ -2,7 +2,7 @@ const port = process.env.PORT || 8080;
 const host = process.env.HOST || '127.0.0.1';
 const express = require("express");
 const bodyParser = require('body-parser');
-const sanitizeHtml = require('sanitize-html');
+//const sanitizeHtml = require('sanitize-html');
 
 const app = express();
 

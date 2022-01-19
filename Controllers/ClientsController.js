@@ -1,4 +1,4 @@
-var access_token = "1a2face158275ab8ba48eaf6df430d8ea0a0606f";
+var access_token = "8c0f8bd16ada0ad37334f9c75863543c3096d3a9";
 var link = `https://api.moloni.pt/v1/customers/getAll/?access_token=${access_token}`;
 const request = require('request');
 //const sanitizeHtml = require('sanitize-html');
@@ -23,14 +23,16 @@ function getAll(req, res) {
 
 function insertCli(req, res) {
     const vat = req.vat;
-    link = `https://api.moloni.pt/v1/customers/insert/?access_token=1a2face158275ab8ba48eaf6df430d8ea0a0606f`
+    const number = req.number;
+    const name = req.name;
+    link = `https://api.moloni.pt/v1/customers/insert/?access_token=8c0f8bd16ada0ad37334f9c75863543c3096d3a9`
     request.post({
         url: link,
         form: {
             company_id: '205211',
             vat: vat, //string 
-            number: req.sanitize('number').escape(), //customer number ex: 12345
-            name: req.sanitize('name').escape(), //string
+            number: number, //customer number ex: 12345
+            name: name, //string
             language_id: req.sanitize('language_id').escape(), //int, 1 para tuga
             address: req.sanitize('address').escape(), //string 
             zip_code: req.sanitize('zip_code').escape(), //string ####-###
