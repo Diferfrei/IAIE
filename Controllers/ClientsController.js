@@ -30,7 +30,6 @@ function insertCli(req, res) {
     const city = req.city;
     const email = req.email;
     const phone = req.phone;
-    const email = req.email;
     const notes = req.notes;
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=8c0f8bd16ada0ad37334f9c75863543c3096d3a9`
     request.post({
@@ -50,7 +49,7 @@ function insertCli(req, res) {
             phone: phone, //string OPTIONAL
             fax: '0', //string OPTIONAL
             contact_name: '0', //string OPTIONAL
-            contact_email: email, //string OPTIONAL
+            contact_email: '0', //string OPTIONAL
             contact_phone: '0', //string OPTIONAL
             notes: notes, //string OPTIONAL
             salesman_id: '0', //int OPTIONAL
