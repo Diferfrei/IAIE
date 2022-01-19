@@ -25,7 +25,7 @@ const audits = require('./Routes/ClientsRoute');
 
 app.use('/', clientsRoutes);
 app.use('/addClient', clientsRoutes);
-app.use('/deleteClient');
+app.use('/deleteClient', clientsRoutes);
 
 // Server connection
 app.listen(port, (err) => {
