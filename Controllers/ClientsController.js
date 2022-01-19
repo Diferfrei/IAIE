@@ -74,7 +74,8 @@ function insertCli(req, res) {
             return res.status(500).end();
         }
         else {
-            console.log("Successfully inserted");
+            const success = "Successfully inserted";
+            res.json(success);
         }
     });
 }
