@@ -21,9 +21,6 @@ const clientsRoutes = require('./Routes/ClientsRoute');
 app.use('./assets', express.static ('assets'));
 app.use('./views', express.static ('views'));
 
-app.use('/', clientsRoutes);
-app.use('/addClient', clientsRoutes);
-
 
 // Server connection
 app.listen(port, (err) => {

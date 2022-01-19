@@ -31,7 +31,7 @@ function insertCli(req, res) {
     const email = req.email;
     const phone = req.phone;
     const notes = req.notes;
-    link = `https://api.moloni.pt/v1/customers/insert/?access_token=8c0f8bd16ada0ad37334f9c75863543c3096d3a9`
+    link = `https://api.moloni.pt/v1/customers/insert/?access_token=${access_token}`;
     request.post({
         url: link,
         form: {
@@ -83,5 +83,5 @@ function insertCli(req, res) {
 
 module.exports = {
     listClients: getAll,
-    addClient: insertCli
+    addClient: insertCli,
 };
