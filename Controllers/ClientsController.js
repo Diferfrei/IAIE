@@ -25,6 +25,13 @@ function insertCli(req, res) {
     const vat = req.vat;
     const number = req.number;
     const name = req.name;
+    const address = req.address;
+    const zip_code = req.zip_code;
+    const city = req.city;
+    const email = req.email;
+    const phone = req.phone;
+    const email = req.email;
+    const notes = req.notes;
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=8c0f8bd16ada0ad37334f9c75863543c3096d3a9`
     request.post({
         url: link,
@@ -33,34 +40,34 @@ function insertCli(req, res) {
             vat: vat, //string 
             number: number, //customer number ex: 12345
             name: name, //string
-            language_id: req.sanitize('language_id').escape(), //int, 1 para tuga
-            address: req.sanitize('address').escape(), //string 
-            zip_code: req.sanitize('zip_code').escape(), //string ####-###
-            city: req.sanitize('city').escape(), //string 
-            country_id: req.sanitize('country_id').escape(), //int, 1 para tuga
-            email: req.sanitize('email').escape(), //string OPTIONAL
-            website: req.sanitize('website').escape(), //string OPTIONAL
-            phone: req.sanitize('phone').escape(), //string OPTIONAL
-            fax: req.sanitize('fax').escape(), //string OPTIONAL
-            contact_name: req.sanitize('contact_name').escape(), //string OPTIONAL
-            contact_email: req.sanitize('contact_email').escape(), //string OPTIONAL
-            contact_phone: req.sanitize('contact_phone').escape(), //string OPTIONAL
-            notes: req.sanitize('notes').escape(), //string OPTIONAL
-            salesman_id: req.sanitize('salesman_id').escape(), //int OPTIONAL
-            price_class_id: req.sanitize('price_class_id').escape(), //int OPTIONAL
-            maturity_date_id: req.sanitize('maturity_date_id').escape(), //int 1297341 
-            payment_day: req.sanitize('payment_day').escape(), //int OPTIONAL
-            discount: req.sanitize('discount').escape(), //float OPTIONAL
-            credit_limit: req.sanitize('credit_limit').escape(), //float OPTIONAL
+            language_id: '1', //int, 1 para tuga
+            address: address, //string 
+            zip_code: zip_code, //string ####-###
+            city: city, //string 
+            country_id: '1', //int, 1 para tuga
+            email: email, //string OPTIONAL
+            website: '0', //string OPTIONAL
+            phone: phone, //string OPTIONAL
+            fax: '0', //string OPTIONAL
+            contact_name: '0', //string OPTIONAL
+            contact_email: email, //string OPTIONAL
+            contact_phone: '0', //string OPTIONAL
+            notes: notes, //string OPTIONAL
+            salesman_id: '0', //int OPTIONAL
+            price_class_id: '0', //int OPTIONAL
+            maturity_date_id: '1297341', //int 1297341 
+            payment_day: '0', //int OPTIONAL
+            discount: '0', //float OPTIONAL
+            credit_limit: '0', //float OPTIONAL
             
             copies:{
                 document_set_id: req.sanitize('document_set_id').escape(), //0
                 copies: req.sanitize('copies').escape(), //0
             },
             
-            payment_method_id: req.sanitize('payment_method_id').escape(), //int 1454269 ou 0
-            delivery_method_id: req.sanitize('delivery_method_id').escape(), //int 1488477 OPTIONAL
-            field_notes: req.sanitize('delivery_method_id').escape(), //string OPTIONAL
+            payment_method_id: '1454269', //int 1454269 para transf banc ou 0
+            delivery_method_id: '1488477', //int 1488477 OPTIONAL
+            field_notes: '0', //string OPTIONAL
         }
     }, function (err, httpResponse, body) {
         if (err) {
