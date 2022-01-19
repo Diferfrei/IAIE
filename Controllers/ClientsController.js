@@ -74,7 +74,7 @@ function addClient(req, res) {
             return res.status(500).end();
         }
         else {
-            data = JSON.parse(body);
+            data = JSON.parse(httpResponse);
             res.json(data);
         } 
     });
