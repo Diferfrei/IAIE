@@ -21,12 +21,13 @@ function getAll(req, res) {
 }
 
 function insertCli(req, res) {
+    const vat = req.sanitize('vat').escape();
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=1a2face158275ab8ba48eaf6df430d8ea0a0606f`
     request.post({
         url: link,
         form: {
             company_id: '205211',
-            vat: req.sanitize('vat').escape(), //string 
+            vat: vat, //string 
             number: req.sanitize('number').escape(), //customer number ex: 12345
             name: req.sanitize('name').escape(), //string
             language_id: req.sanitize('language_id').escape(), //int, 1 para tuga
