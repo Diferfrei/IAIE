@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 const controllerClients = require('../Controllers/ClientsController');
 
-// Visualizar Users
+// Routes
 router.get('/clients', controllerClients.listClients);
 router.post('/clients/addClient', controllerClients.addClient);
 

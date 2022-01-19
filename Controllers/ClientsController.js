@@ -21,7 +21,7 @@ function getAll(req, res) {
     });
 }
 
-function insertCli(req, res) {
+function addClient(req, res) {
     const vat = req.vat;
     const number = req.number;
     const name = req.name;
@@ -83,5 +83,5 @@ function insertCli(req, res) {
 
 module.exports = {
     listClients: getAll,
-    addClient: insertCli,
+    addClient: addClient
 };

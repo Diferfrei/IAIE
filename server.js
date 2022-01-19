@@ -21,8 +21,10 @@ const clientsRoutes = require('./Routes/ClientsRoute');
 app.use('./assets', express.static ('assets'));
 app.use('./views', express.static ('views'));
 
+const audits = require('./Routes/ClientsRoute');
+
 app.use('/', clientsRoutes);
-app.use('/addClient', clientsRoutes);
+//app.use('/addClient', clientsRoutes);
 
 
 // Server connection
