@@ -7,4 +7,8 @@ router.get('/clients', function (req, res) {
     controllerClients.listClients(req, res)
 });
 
+router.post('/clients', function (req, res) {
+    controllerClients.addClient(req, res)
+});
+
 module.exports = router;
