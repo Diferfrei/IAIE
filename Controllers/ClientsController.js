@@ -76,7 +76,7 @@ function insertCli(req, res) {
         else {
             const success = "Successfully inserted";
             res.json(success);
-        }
+        } 
     });
 }
 
