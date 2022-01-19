@@ -80,8 +80,29 @@ function addClient(req, res) {
     });
 }
 
+function deleteClient(req, res) {
+    link = `https://api.moloni.pt/v1/customers/delete/?access_token=${access_token}`;
+    const customer_id = req.customer_id;
+    request.post({
+        url: link,
+        form: {
+            company_id: '205211',
+            customer_id: customer_id
+        }
+    }, function (err, httpResponse, body) {
+        if (err) {
+            console.log(err);
+            return res.status(500).end();
+        }
+        else {
+            data = JSON.parse(body);
+            res.json(data);
+        }
+    });
+}
 
 module.exports = {
     listClients: getAll,
-    addClient: addClient
+    addClient: addClient,
+    deleteClient: deleteClient
 };
