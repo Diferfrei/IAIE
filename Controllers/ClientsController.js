@@ -39,16 +39,11 @@ function getClient(req, res) {
         console.log(err);
         return res.status(500).end();
       } else {
-        let arrayLength = body.length;
-        console.log(arrayLength);
-        for (var i = 0; i < arrayLength; i++) {
-          console.log(body[i].customer_id);
-          if (body[i].customer_id == customer_id) {
-            result = body[i].customer_id;
-          }
-        }
+        data = JSON.parse(body);
+        var result = data.filter((obj) => {
+          return obj.customer_id === customer_id;
+        });
         res.json(result);
-        console.log(result);
       }
     }
   );
