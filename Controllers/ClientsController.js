@@ -1,4 +1,4 @@
-var access_token = "1c9978d53160b238ede70470764ab19580763da1";
+var access_token = "bf574a602282e1cb4edcccac58d22211034472f3";
 
 const request = require('request');
 //const sanitizeHtml = require('sanitize-html');
@@ -32,7 +32,6 @@ function addClient(req, res) {
     const email = req.params.email;
     const phone = req.params.phone;
     const notes = req.params.notes;
-    console.log(vat+" "+number);
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=${access_token}`;
     request.post({
         url: link,
@@ -92,7 +91,6 @@ function updateClient(req, res) {
     const email = req.params.email;
     const phone = req.params.phone;
     const notes = req.params.notes;
-    console.log(vat+" "+number);
     link = `https://api.moloni.pt/v1/customers/update/?access_token=${access_token}`;
     request.post({
         url: link,
