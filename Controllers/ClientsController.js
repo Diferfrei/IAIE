@@ -45,6 +45,7 @@ function getClient(req, res) {
         });
         res.json(result);
         console.log(result);
+        console.log(data);
       }
     }
   );
