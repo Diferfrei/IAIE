@@ -13,7 +13,7 @@ router.delete(
   controllerClients.deleteClient
 );
 router.put(
-    "/clients/addClient/:vat&:number&:name&:address&:zip_code&:city&:email&:phone&:notes",
+    "/clients/updateClient/:vat&:number&:name&:address&:zip_code&:city&:email&:phone&:notes",
   controllerClients.updateClient
 );
 
