@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html
+    class="sap-desktop sapUiTheme-sap_fiori_3 sapUiMedia-GenericTileDeviceSet-large sapUiMedia-Std-Tablet sapUiMedia-StdExt-Tablet"
+    dir="ltr" data-sap-ui-browser="cr96" data-sap-ui-os="win10" lang="en" data-sap-ui-animation="on"
+    data-sap-ui-animation-mode="full" style="height: 100%;">
+<!-- Copyright (c) 2015 SAP AG, All Rights Reserved -->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Cliente</title>
+
+
+   
+
+    <script src="https://sapui5.hana.ondemand.com/test-resources/sap/ushell/bootstrap/sandbox.js"
+        id="sap-ushell-bootstrap"></script>
+    <!-- Bootstrap the UI5 core library -->
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-libs=""
+        data-sap-ui-async="true" data-sap-ui-preload="async" data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-compatversion="edge" data-sap-ui-language="en"
+        data-sap-ui-resourceroots="{&quot;tutorial.products&quot;: &quot;../&quot;}" data-sap-ui-frameoptions="allow"> // NON-SECURE setting for testing environment
+        </script>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sapui5.hana.ondemand.com/resources/sap/ui/core/library-preload.js"
+        data-sap-ui-module="sap/ui/core/library-preload.js"></script>
+
+    <link rel="stylesheet" href="https://sapui5.hana.ondemand.com/resources/sap/ushell/themes/sap_fiori_3/library.css"
+        id="sap-ui-theme-sap.ushell" data-sap-ui-ready="true">
+    <script src="https://sapui5.hana.ondemand.com/test-resources/sap/ushell/demoapps/PersSrvTest/App.controller.js"
+        data-sap-ui-module="sap/ushell/demo/PersSrvTest/App.controller.js"></script>
+    <link rel="icon" href="https://sapui5.hana.ondemand.com/resources/sap/ushell/themes/base/img/launchpad_favicon.ico">
+
+    <link href="./main.css" rel="stylesheet">
+</head>
+
+<body class="sapUiBody sapUiSizeCozy" id="content" style="overflow:auto">
+    <div id="shell-hdr" class="sapContrastPlus sapUshellShellHead" data-sap-ui-area="shell-hdr">
+        <header id="shell-header" data-sap-ui="shell-header" aria-label="Shell Bar"
+            data-sap-ui-customfastnavgroup="true" class="sapUshellShellHeader sapUshellShellCntnt">
+            <div id="shell-header-hdr-begin" class="sapUshellShellHeadBegin"><a id="shell-header-logo"
+                href="#Shell-home" title="Navegar para a página principal" aria-label="Página principal"
+                class="sapUshellShellIco"><img id="shell-header-icon" alt="Logótipo da empresa"
+                    src="https://ui5.sap.com/resources/sap/ushell/themes/base/img/SAPLogo.svg"></a>
+            <h1 id="shellAppTitle" data-sap-ui="shellAppTitle" aria-level="1" class="sapUshellHeadTitle"
+                style="overflow: visible;"><span id="shellAppTitle-button" tabindex="0" title="Navigation menu"
+                    role="button" aria-haspopup="dialog"
+                    aria-label="Personalization Service Test - Show Navigation Menu"
+                    class="sapUshellAppTitle sapUshellAppTitleClickable">Clientes<span title="Navigation menu"
+                        aria-hidden="true" class="sapUiIconTitle"></span></span></span></span></span></h1>
+    </div>
+    </header>
+    </div>
+
+    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
+        <div class="app-main">
+
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div>Dados do Cliente</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
+                                <span>Ver Dados</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1">
+                                <span>Editar Dados</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Adicionar Cliente</h5>
+                                    <form class="">
+                                        <div class="form-row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group"><label  class="">Nome</label><input name="nome" id="nome" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">NIF</label><input name="nif" id="nif" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Código Cliente</label><input name="cod" id="cod" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group"><label  class="">Morada</label><input name="morada" id="morada" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>  
+                                            <div class="col-md-4">
+                                                <div class="position-relative form-group"><label  class="">Localidade</label><input name="localidade" id="localidade" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label  class="">E-mail</label><input name="mail" id="mail" placeholder="" type="mail" class="form-control" disabled></div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Telefone</label><input name="tele" id="tele" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Código Postal</label><input name="zip" id="zip" placeholder="" type="text" class="form-control" disabled></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">País</label><input name="pais" id="pais" placeholder="Portugal" type="text" class="form-control" disabled></div>
+                                            </div>
+                                            
+                                        </div>
+                                       
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="position-relative form-group"><label for="exampleText" class="">Descrição</label><textarea rows="4" name="desc" id="desc" class="form-control" disabled></textarea></div>
+                                            </div> 
+                                        </div>
+                                        
+                                    </form>
+                                </div>    
+                            </div>  
+                            
+                        </div>
+                        <div class="tab-pane tabs-animation fade" id="tab-content-1" role="tabpanel">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body"><h5 class="card-title">Adicionar Cliente</h5>
+                                    <form class="">
+                                        <div class="form-row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group"><label  class="">Nome</label><input name="nome" id="nome" placeholder="" type="text" class="form-control" ></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">NIF</label><input name="nif" id="nif" placeholder="" type="text" class="form-control" ></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Código Cliente</label><input name="cod" id="cod" placeholder="" type="text" class="form-control" ></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="col-md-8">
+                                                <div class="position-relative form-group"><label  class="">Morada</label><input name="morada" id="morada" placeholder="" type="text" class="form-control" ></div>
+                                            </div>  
+                                            <div class="col-md-4">
+                                                <div class="position-relative form-group"><label  class="">Localidade</label><input name="localidade" id="localidade" placeholder="" type="text" class="form-control" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="position-relative form-group"><label  class="">E-mail</label><input name="mail" id="mail" placeholder="" type="mail" class="form-control" ></div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Telefone</label><input name="tele" id="tele" placeholder="" type="text" class="form-control" ></div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">Código Postal</label><input name="zip" id="zip" placeholder="" type="text" class="form-control" ></div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="position-relative form-group" ><label  class="">País</label><input name="pais" id="pais" placeholder="Portugal" type="text" class="form-control" disabled></div>
+                                            </div>
+                                            
+                                        </div>
+                                       
+                                        <div class="form-row">
+                                            <div class="col-md-12">
+                                                <div class="position-relative form-group"><label for="exampleText" class="">Descrição</label><textarea rows="4" name="desc" id="desc" class="form-control" ></textarea></div>
+                                            </div> 
+                                        </div>
+                                        <button class="mt-1 btn btn-primary">Guardar</button>
+                                    </form>
+                                </div>    
+                            </div>  
+                        </div>
+                    </div>
+
+                    
+                </div>
+               
+            </div> 
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/scripts/main.js"></script>
+</body>
+
+</html>

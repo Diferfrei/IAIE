@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html
+    class="sap-desktop sapUiTheme-sap_fiori_3 sapUiMedia-GenericTileDeviceSet-large sapUiMedia-Std-Tablet sapUiMedia-StdExt-Tablet"
+    dir="ltr" data-sap-ui-browser="cr96" data-sap-ui-os="win10" lang="en" data-sap-ui-animation="on"
+    data-sap-ui-animation-mode="full" style="height: 100%;">
+<!-- Copyright (c) 2015 SAP AG, All Rights Reserved -->
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+
+
+    <script type="text/javascript">
+        window["sap-ushell-config"] = {
+            defaultRenderer: "fiori2",
+            bootstrapPlugins: {
+                "RuntimeAuthoringPlugin": {
+                    component: "sap.ushell.plugins.rta",
+                    config: {
+                        validateAppVersion: false
+                    }
+                }
+            },
+            renderers: {
+                fiori2: {
+                    componentData: {
+                        config: {
+                            search: "hidden"
+                        }
+                    }
+                }
+            },
+            applications: {
+                "Clientes-tile": {
+                    title: "Clientes",
+                    description: "Cenas de clientes",
+                    additionalInformation: "SAPUI5.Component=tutorial.products",
+                    applicationType: "URL",
+                    url: "../"
+                }
+            }
+        };
+    </script>
+
+    <script src="https://sapui5.hana.ondemand.com/test-resources/sap/ushell/bootstrap/sandbox.js"
+        id="sap-ushell-bootstrap"></script>
+    <!-- Bootstrap the UI5 core library -->
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-libs=""
+        data-sap-ui-async="true" data-sap-ui-preload="async" data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-compatversion="edge" data-sap-ui-language="en"
+        data-sap-ui-resourceroots="{&quot;tutorial.products&quot;: &quot;../&quot;}" data-sap-ui-frameoptions="allow"> // NON-SECURE setting for testing environment
+        </script>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sapui5.hana.ondemand.com/resources/sap/ui/core/library-preload.js"
+        data-sap-ui-module="sap/ui/core/library-preload.js"></script>
+
+    <link rel="stylesheet" href="https://sapui5.hana.ondemand.com/resources/sap/ushell/themes/sap_fiori_3/library.css"
+        id="sap-ui-theme-sap.ushell" data-sap-ui-ready="true">
+    <script src="https://sapui5.hana.ondemand.com/test-resources/sap/ushell/demoapps/PersSrvTest/App.controller.js"
+        data-sap-ui-module="sap/ushell/demo/PersSrvTest/App.controller.js"></script>
+    <link rel="icon" href="https://sapui5.hana.ondemand.com/resources/sap/ushell/themes/base/img/launchpad_favicon.ico">
+
+    <link href="./main.css" rel="stylesheet">
+</head>
+
+<body class="sapUiBody sapUiSizeCozy" id="content">
+    <div id="shell-hdr" class="sapContrastPlus sapUshellShellHead" data-sap-ui-area="shell-hdr">
+        <header id="shell-header" data-sap-ui="shell-header" aria-label="Shell Bar"
+            data-sap-ui-customfastnavgroup="true" class="sapUshellShellHeader sapUshellShellCntnt">
+            <div id="shell-header-hdr-begin" class="sapUshellShellHeadBegin"><a id="shell-header-logo"
+                href="#Shell-home" title="Navegar para a página principal" aria-label="Página principal"
+                class="sapUshellShellIco"><img id="shell-header-icon" alt="Logótipo da empresa"
+                    src="https://ui5.sap.com/resources/sap/ushell/themes/base/img/SAPLogo.svg"></a>
+            <h1 id="shellAppTitle" data-sap-ui="shellAppTitle" aria-level="1" class="sapUshellHeadTitle"
+                style="overflow: visible;"><span id="shellAppTitle-button" tabindex="0" title="Navigation menu"
+                    role="button" aria-haspopup="dialog"
+                    aria-label="Personalization Service Test - Show Navigation Menu"
+                    class="sapUshellAppTitle sapUshellAppTitleClickable">Clientes<span title="Navigation menu"
+                        aria-hidden="true" class="sapUiIconTitle"></span></span></span></span></span></h1>
+    </div>
+    </header>
+    </div>
+
+    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
+        <div class="app-main">
+
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div>Lista de Clientes</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lista de Clientes <span
+                                            style="display:inline-block; width: 1150px;"></span> <a
+                                            href="criar_cliente.html"><button
+                                                class="mb-2 mr-2 btn btn-primary">Adicionar Cliente</button> </a>
+                                    </h5>
+
+
+                                    <table class="mb-12 table table-striped" id="tabelaCamaras">
+                                        <thead>
+                                            <tr>
+                                                <th>#ID</th>
+                                                <th>Nome</th>
+                                                <th>Diretor de Atividades</th>
+                                                <th>Ações</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>I01</td>
+                                                <td>PlayPark</td>
+                                                <td>Bruno Dias</td>
+                                                <td>
+                                                    <a href="dados_cliente.html"><button type="button"
+                                                            class="mb-2 mr-2 border-0  btn-lg btn-outline-light"> <i
+                                                                class="pe-7s-look"> </i>
+                                                        </button></a>
+                                                        <a href="instituicao-form.html"><button type="button"
+                                                            class="mb-2 mr-2 border-0  btn-lg btn-outline-light"> <i
+                                                                class="pe-7s-trash"> </i>
+                                                        </button></a>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>I02</td>
+                                                <td>HaveFun</td>
+                                                <td>Diogo Freitas</td>
+                                                <td>
+                                                    <a href="instituicao-form.html"><button type="button"
+                                                            class="mb-2 mr-2 border-0 btn-lg btn-outline-light"> <i
+                                                                class="pe-7s-look"> </i>
+                                                        </button></a>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/scripts/main.js"></script>
+</body>
+
+</html>
