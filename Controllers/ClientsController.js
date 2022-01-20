@@ -47,16 +47,16 @@ function addClient(req, res) {
             city: city, //string 
             country_id: '1', //int, 1 para tuga
             email: email, //string OPTIONAL
-            website: '0', //string OPTIONAL
+            website: "", //string OPTIONAL
             phone: phone, //string OPTIONAL
-            fax: '0', //string OPTIONAL
-            contact_name: '0', //string OPTIONAL
-            contact_email: '0', //string OPTIONAL
-            contact_phone: '0', //string OPTIONAL
+            fax: "", //string OPTIONAL
+            contact_name: "", //string OPTIONAL
+            contact_email: "", //string OPTIONAL
+            contact_phone: "", //string OPTIONAL
             notes: notes, //string OPTIONAL
             salesman_id: '0', //int OPTIONAL
             price_class_id: '0', //int OPTIONAL
-            maturity_date_id: '1297341', //int 1297341 
+            maturity_date_id: '0', //int 1297341 
             payment_day: '0', //int OPTIONAL
             discount: '0', //float OPTIONAL
             credit_limit: '0', //float OPTIONAL
@@ -68,7 +68,7 @@ function addClient(req, res) {
             
             payment_method_id: '1454269', //int 1454269 para transf banc ou 0
             delivery_method_id: '1488477', //int 1488477 OPTIONAL
-            field_notes: '0', //string OPTIONAL
+            field_notes: "", //string OPTIONAL
         }
     }, function (err, httpResponse, body) {
         if (err) {
