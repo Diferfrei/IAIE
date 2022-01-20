@@ -93,7 +93,7 @@ function updateClient(req, res) {
     const phone = req.params.phone;
     const notes = req.params.notes;
     console.log(vat+" "+number);
-    link = `https://api.moloni.pt/v1/customers/insert/?access_token=${access_token}`;
+    link = `https://api.moloni.pt/v1/customers/update/?access_token=${access_token}`;
     request.post({
         url: link,
         form: {
