@@ -23,15 +23,16 @@ function getAll(req, res) {
 }
 
 function addClient(req, res) {
-    const vat = req.vat;
-    const number = req.number;
-    const name = req.name;
-    const address = req.address;
-    const zip_code = req.zip_code;
-    const city = req.city;
-    const email = req.email;
-    const phone = req.phone;
-    const notes = req.notes;
+    const vat = req.params.vat;
+    const number = req.params.number;
+    const name = req.params.name;
+    const address = req.params.address;
+    const zip_code = req.params.zip_code;
+    const city = req.params.city;
+    const email = req.params.email;
+    const phone = req.params.phone;
+    const notes = req.params.notes;
+    console.log(vat+" "+number);
     link = `https://api.moloni.pt/v1/customers/insert/?access_token=${access_token}`;
     request.post({
         url: link,
@@ -84,7 +85,6 @@ function addClient(req, res) {
 function deleteClient(req, res) {
     link = `https://api.moloni.pt/v1/customers/delete/?access_token=${access_token}`;
     var customer_id = req.params.customer_id; 
-    console.log(customer_id);
     request.post({
         url: link,
         form: {
