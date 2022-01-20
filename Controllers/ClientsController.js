@@ -31,8 +31,7 @@ function getClient(req, res) {
     {
       url: link,
       form: {
-        company_id: "205211",
-        customer_id: customer_id,
+        company_id: "205211"
       },
     },
     function (err, httpResponse, body) {
