@@ -1,10 +1,10 @@
 var access_token = "83485123fa2239ea31e0ac9d546d3b979eddc57d";
 
-var link = `https://api.moloni.pt/v1/customers/getAll/?access_token=${access_token}`;
 const request = require('request');
 //const sanitizeHtml = require('sanitize-html');
  
 function getAll(req, res) {
+    link = `https://api.moloni.pt/v1/customers/getAll/?access_token=${access_token}`;
     request.post({
         url: link,
         form: {
