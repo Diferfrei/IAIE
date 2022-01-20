@@ -44,6 +44,7 @@ function getClient(req, res) {
           return obj.customer_id === customer_id;
         });
         res.json(result);
+        console.log(result);
       }
     }
   );
