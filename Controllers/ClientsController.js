@@ -31,7 +31,7 @@ function getClient(req, res) {
     {
       url: link,
       form: {
-        company_id: "205211"
+        company_id: "205211",
       },
     },
     function (err, httpResponse, body) {
@@ -39,13 +39,13 @@ function getClient(req, res) {
         console.log(err);
         return res.status(500).end();
       } else {
+        console.log(body);
         data = JSON.parse(body);
         var result = data.filter((obj) => {
           return obj.customer_id === customer_id;
         });
         res.json(result);
         console.log(result);
-        console.log(data);
       }
     }
   );
