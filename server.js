@@ -23,7 +23,7 @@ app.use('./views', express.static ('views'));
 
 const audits = require('./Routes/ClientsRoute');
 
-app.use('/', clientsRoutes);
+app.use('/all', clientsRoutes);
 app.use('/addClient', clientsRoutes);
 app.use('/deleteClient', clientsRoutes);
 
