@@ -44,11 +44,9 @@ function getClient(req, res) {
         let result;
         for(var i = 0; i < data.length; i++) {
             var data2 = data[i];
-            console.log(data2);
             if (data2.customer_id == customer_id){
                 result = data2
             }
-            console.log(result);
         }
 
         res.json(result);
