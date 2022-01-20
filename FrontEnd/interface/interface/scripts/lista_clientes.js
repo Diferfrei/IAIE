@@ -1,6 +1,5 @@
 window.onload = function () {
     const SERVER_URL = "https://iaie.herokuapp.com/clients/all";
-    };
     $(document).ready(function () {
         fetch(SERVER_URL)
             .then((response) => response.json())
