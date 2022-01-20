@@ -4,6 +4,7 @@ window.onload = function () {
         fetch(SERVER_URL)
             .then((response) => response.json())
             .then(clients => {
+                console.log(clients);
                 var $table = $("#tabelaClients").DataTable({
                     data: clients,
                     columns: [
