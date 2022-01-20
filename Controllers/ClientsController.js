@@ -40,9 +40,17 @@ function getClient(req, res) {
         return res.status(500).end();
       } else {
         data = JSON.parse(body);
-        var result = data.filter((obj) => {
-          return obj.customer_id === customer_id;
-        });
+
+        let result;
+        for(var i = 0; i < data.length; i++) {
+            var data2 = data[i];
+            console.log(data2);
+            if (data2.customer_id == customer_id){
+                result = data2
+            }
+            console.log(result);
+        }
+
         res.json(result);
       }
     }
