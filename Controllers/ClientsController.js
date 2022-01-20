@@ -39,7 +39,8 @@ function getClient(req, res) {
         console.log(err);
         return res.status(500).end();
       } else {
-        const arrayLength = body.length;
+        let arrayLength = body.length;
+        console.log(arrayLength);
         for (var i = 0; i < arrayLength; i++) {
           console.log(body[i].customer_id);
           if (body[i].customer_id == customer_id) {
