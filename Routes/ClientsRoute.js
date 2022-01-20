@@ -4,7 +4,7 @@ const controllerClients = require("../Controllers/ClientsController");
 
 // Routes
 router.get("/clients/all", controllerClients.listClients);
-router.get("/clients/:customerid", controllerClients.getClient);
+router.get("/clients/:customer_id", controllerClients.getClient);
 router.post(
   "/clients/addClient/:vat&:number&:name&:address&:zip_code&:city&:email&:phone&:notes",
   controllerClients.addClient
