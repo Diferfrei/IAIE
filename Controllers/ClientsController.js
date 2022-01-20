@@ -83,7 +83,7 @@ function addClient(req, res) {
 
 function deleteClient(req, res) {
     link = `https://api.moloni.pt/v1/customers/delete/?access_token=${access_token}`;
-    const customer_id = req.customer_id; 
+    let customer_id = req.params.customer_id; 
     console.log(customer_id);
     request.post({
         url: link,
