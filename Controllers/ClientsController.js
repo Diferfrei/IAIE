@@ -22,6 +22,27 @@ function getAll(req, res) {
     });
 }
 
+function getClient(req, res) {
+    link = `https://api.moloni.pt/v1/customers/getOne/?access_token=${access_token}`;
+    const customer_id = req.params.customer_id;
+    request.post({
+        url: link,
+        form: {
+            company_id: '205211',
+            customer_id: customer_id
+        }
+    }, function (err, httpResponse, body) {
+        if (err) {
+            console.log(err);
+            return res.status(500).end();
+        }
+        else {
+            data = JSON.parse(body);
+            res.json(data);
+        }
+    });
+}
+
 function addClient(req, res) {
     const vat = req.params.vat;
     const number = req.params.number;
@@ -164,6 +185,7 @@ function deleteClient(req, res) {
 
 module.exports = {
     listClients: getAll,
+    getClient: getClient,
     addClient: addClient,
     deleteClient: deleteClient,
     updateClient: updateClient

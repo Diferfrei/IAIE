@@ -25,7 +25,7 @@ window.onload = function () {
                             title: "Ações",
                             data: null,
                             render: function (value, cell, clients) {
-                                var action = `<a href="atividade-form.html">
+                                var action = `<a href="dados_cliente.html">
                                                             <button type="button" class="mb-2 mr-2 border-0 btn-lg btn-outline-light">
                                                                 <i class="pe-7s-look"> </i>
                                                             </button>
