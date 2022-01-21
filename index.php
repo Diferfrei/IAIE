@@ -1,3 +1,1 @@
-<?
-include_once("lista_clientes.html");
-?>
+<?php include_once("lista_clientes.html"); ?>
