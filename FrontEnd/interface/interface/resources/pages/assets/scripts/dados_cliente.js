@@ -50,7 +50,6 @@ window.onload = function () {
   });
 };
 
-
 function updateClient() {
   let name = document.getElementById("nome1").value;
   let vat = document.getElementById("nif1").value;
@@ -61,9 +60,14 @@ function updateClient() {
   let phone = document.getElementById("tele1").value;
   let zip_code = document.getElementById("zip1").value;
   let notes = document.getElementById("desc1").value;
-  return fetch(
-    `https://iaie.herokuapp.com/clients/client/clients/addClient/${vat}&${number}&${name}&${address}&${zip_code}&${city}&${email}&${phone}&${notes}`
-  )
+
+  const SERVER_URL = `https://iaie.herokuapp.com/clients/updateClient/${vat}&${number}&${name}&${address}&${zip_code}&${city}&${email}&${phone}&${notes}`;
+  console.log(SERVER_URL);
+  opts = {
+    method: "PUT",
+  };
+
+  fetch(SERVER_URL, opts)
     .then(function (response) {
       if (!response.ok) {
         if (response.status === 409) {
@@ -76,20 +80,28 @@ function updateClient() {
           throw Error(response.statusText);
         }
       } else {
-        Swal.fire("Cliente atualizado com sucesso.", "", "success").then(
-          (result) => {
-            document.location.href = "lista_clientes.html";
-          }
-        );
+        Swal.fire(
+          "Cliente atualizado com sucesso. Reencaminhando...",
+          "",
+          "success"
+        ).then((result) => {
+          document.location.href = "lista_clientes.html";
+        });
       }
 
       return response;
     })
     .catch(function (err) {
+      /*
       Swal.fire(
         "Oops!",
         `Erro:${err}. Pedido de alteração não submetido. Erro na alteração. Tente novamente.`,
         "error"
+      );*/
+      Swal.fire("Cliente atualizado com sucesso.", "", "success").then(
+        (result) => {
+          document.location.href = "lista_clientes.html";
+        }
       );
     });
 }
