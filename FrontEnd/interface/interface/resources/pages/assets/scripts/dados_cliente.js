@@ -1,5 +1,6 @@
 window.onload = function () {
-  let customer_id = localStorage.getItem("customer_id");
+  var urlParams = new URLSearchParams(window.location.search);
+  const customer_id = urlParams.get("id");
 
   let name = document.getElementById("nome");
   let vat = document.getElementById("nif");
