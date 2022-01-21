@@ -49,6 +49,8 @@ window.onload = function () {
       });
   });
 };
+
+
 function updateClient() {
   let name = document.getElementById("nome1").value;
   let vat = document.getElementById("nif1").value;
