@@ -11,13 +11,13 @@ window.onload = function () {
     fetch(SERVER_URL)
       .then((response) => response.json())
       .then((clients) => {
-          console.log(clients[0].customer_id);
         for (var i = 0; i < clients.length; i++) {
-            console.log(clients[i].customer_id);
           for (var c = 0; c < delCli.length; c++) {
+              i=0;
             if (clients[i].customer_id == delCli[c]) {
               delete clients[i];
             }
+            i++;
           }
         }
         var $table = $("#tabelaClients").DataTable({
