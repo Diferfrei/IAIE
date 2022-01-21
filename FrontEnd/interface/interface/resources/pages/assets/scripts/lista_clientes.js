@@ -11,17 +11,35 @@ window.onload = function () {
     fetch(SERVER_URL)
       .then((response) => response.json())
       .then((clients) => {
-        for (var i = 0; i < clients.length; i++) {
-          for (var c = 0; c < delCli.length; c++) {
-              i=0;
-            if (clients[i].customer_id == delCli[c]) {
-              delete clients[i];
+        //Filter de delete lógico
+        clients2 = JSON.stringify(clients);
+        clients3 = JSON.parse(clients2);
+        clients4 = [];
+        let customer_id;
+        for (var i = 0; i < delCli.length; i++) {
+          for (var c = 0; c < clients3.length; c++) {
+            customer_id = clients3[c].customer_id;
+            if (customer_id == delCli[i]) {
+              clients4.push(clients3[c]);
             }
-            i++;
           }
         }
+        clients3 = clients3.filter(function (el) {
+          return clients4.indexOf(el) < 0;
+        });
+
+        /*
+        for (var i = 0; i < clients.length; i++) {
+          for (var c = 0; c < delCli.length; c++) {
+            z = 0;
+            if (clients[z].customer_id == delCli[c]) {
+              delete clients[z];
+            }
+            z++;
+          }
+        }*/
         var $table = $("#tabelaClients").DataTable({
-          data: clients,
+          data: clients3,
           columns: [
             { title: "#ID", data: "customer_id" },
             {
@@ -39,8 +57,8 @@ window.onload = function () {
             {
               title: "Ações",
               data: null,
-              render: function (value, cell, clients) {
-                var action = `<a href="dados_cliente.html?id=${clients.customer_id}">
+              render: function (value, cell, clients3) {
+                var action = `<a href="dados_cliente.html?id=${clients3.customer_id}">
                                                             <button type="button" class="mb-2 mr-2 border-0 btn-lg btn-outline-light">
                                                                 <i class="pe-7s-look"> </i>
                                                             </button>

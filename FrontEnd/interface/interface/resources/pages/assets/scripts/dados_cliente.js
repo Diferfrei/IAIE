@@ -49,3 +49,45 @@ window.onload = function () {
       });
   });
 };
+function updateClient() {
+  let name = document.getElementById("nome1").value;
+  let vat = document.getElementById("nif1").value;
+  let number = document.getElementById("cod1").value;
+  let address = document.getElementById("morada1").value;
+  let city = document.getElementById("localidade1").value;
+  let email = document.getElementById("mail1").value;
+  let phone = document.getElementById("tele1").value;
+  let zip_code = document.getElementById("zip1").value;
+  let notes = document.getElementById("desc1").value;
+  return fetch(
+    `https://iaie.herokuapp.com/clients/client/clients/addClient/${vat}&${number}&${name}&${address}&${zip_code}&${city}&${email}&${phone}&${notes}`
+  )
+    .then(function (response) {
+      if (!response.ok) {
+        if (response.status === 409) {
+          Swal.fire(
+            "Dados duplicados.",
+            "Reintroduza corretamente os dados",
+            "warning"
+          );
+        } else {
+          throw Error(response.statusText);
+        }
+      } else {
+        Swal.fire("Cliente atualizado com sucesso.", "", "success").then(
+          (result) => {
+            document.location.href = "lista_clientes.html";
+          }
+        );
+      }
+
+      return response;
+    })
+    .catch(function (err) {
+      Swal.fire(
+        "Oops!",
+        `Erro:${err}. Pedido de alteração não submetido. Erro na alteração. Tente novamente.`,
+        "error"
+      );
+    });
+}
