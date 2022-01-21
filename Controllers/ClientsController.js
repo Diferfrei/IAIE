@@ -19,7 +19,7 @@ function getAll(req, res) {
       } else {
         data = JSON.parse(body);
         res.json(data);
-      }
+      } 
     }
   );
 }
